@@ -1,0 +1,36 @@
+{
+  "name": "portfolios-express",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Mi portfolios Express JS",
+  "homepage": "https://github.com/pfd1795/portfolios-express#readme",
+  "bugs": {
+    "url": "https://github.com/pfd1795/portfolios-express/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pfd1795/portfolios-express.git"
+  },
+  "license": "ISC",
+  "author": "pfd1795",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./bin/www",
+    "dev": "nodemon ./bin/www",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^17.2.3",
+    "ejs": "^3.1.10",
+    "express": "^4.22.0",
+    "http-errors": "~1.6.3",
+    "mongodb": "^7.0.0",
+    "morgan": "^1.10.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}
