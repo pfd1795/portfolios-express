@@ -1,0 +1,254 @@
+@import url("./components/zone-projects.css");
+
+.intro-section {
+
+  display: flex;
+  flex-direction: column;
+  margin: 2em auto;
+  max-width: 940px;
+
+  @media (max-width: 768px) {
+    padding: 0 1.5rem;
+  }
+
+  .welcome-text {
+    strong {
+      font-size: 2rem;
+      font-weight: bold;
+      padding-left: 1rem;
+      white-space: nowrap;
+    }
+
+    span {
+      font-size: 1.5rem;
+      white-space: nowrap;
+    }
+  }
+
+  .content-container {
+    figure {
+      background-color: var(--color-white);
+      border-radius: 50%;
+      float: right;
+      height: 10em;
+      margin: .5em;
+      outline: 4px solid var(--theme-color);
+      overflow: hidden;
+      width: 10em;
+
+      img {
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+      }
+    }
+
+    .description-text {
+      margin-top: 1em;
+
+      span {
+        margin-left: 1em;
+      }
+
+      strong {
+        font-size: 1.25em;
+        font-style: italic;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {}
+
+  @media (min-width: 768px) {
+
+    .welcome-text {
+      strong {
+        margin-right: .3em;
+      }
+
+      br {
+        display: none;
+      }
+
+      span {
+        font-size: 1.5em;
+        white-space: nowrap;
+      }
+    }
+
+    .content-container {
+      figure {
+        float: left;
+        margin: 1em;
+      }
+
+      section {
+        justify-content: end;
+      }
+    }
+  }
+}
+
+.tech-stack-section {
+  display: flex;
+  flex-direction: column;
+  max-width: 1000px;
+  margin: 3rem auto;
+  padding: 2.5em;
+  border-radius: var(--border-radius-2xl);
+  gap: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: rgba(0, 0, 0, 0.7);
+
+  @media (min-width: 900px) {
+    flex-direction: row;
+    align-items: center;
+    padding: 3.5em;
+  }
+
+  .tech-info {
+    flex: 1;
+
+    .tech-title {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .tech-description {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+      opacity: 0.95;
+
+      strong {
+        color: #fff;
+        font-weight: 700;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+    }
+
+    .tech-subtitle {
+      margin-top: 1.5em;
+      font-size: 0.95rem;
+      opacity: 0.8;
+      border-top: 1px solid var(--color-white);
+      padding-top: 1rem;
+    }
+  }
+
+  .tech-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1em;
+    align-items: center;
+    justify-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5em;
+    border-radius: var(--border-radius-xl);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    @media (max-width: 480px) {
+      grid-template-columns: repeat(2, 1fr);
+
+      .tech-plus {
+        display: none;
+      }
+    }
+
+    .tech-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: transform 0.2s ease;
+      padding: 0.5rem;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+
+      .tech-name {
+        font-size: 1.25rem;
+        font-weight: 800;
+        margin-bottom: 0.25em;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+        &.css {
+          color: #89CFF0;
+        }
+
+        &.ejs {
+          color: #ff9fb3;
+        }
+
+        &.nodejs {
+          color: #90EE90;
+        }
+
+        &.expressjs {
+          color: #ffffff;
+        }
+
+        &.mongodb {
+          color: #98FB98;
+        }
+
+        &.ai {
+          background: linear-gradient(to right, #fff, #e0e7ff);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          font-weight: 900;
+        }
+      }
+
+      div:last-child {
+        font-size: 0.8rem;
+        opacity: 0.9;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+    }
+
+    .tech-plus {
+      font-size: 1.5rem;
+      color: rgba(255, 255, 255, 0.5);
+      font-weight: 300;
+    }
+  }
+}
+
+.tech-plus {
+  font-size: 1.875rem;
+  font-weight: bold;
+  margin: 0 auto;
+}
+
+.header-contact {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 2em;
+  justify-content: center;
+  margin-top: 1em;
+  margin-bottom: 3em;
+
+  .social-link {
+    border-radius: .5em;
+    padding: .3rem;
+    transition: background-color .3s ease;
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--theme-color);
+    }
+  }
+
+  .email-container {
+    position: relative;
+    display: inline-block;
+  }
+}

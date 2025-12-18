@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>pfd1795 | <%= title %>
+  </title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <meta name="description"
+    content="Desarrollador Web Full Stack especializado en React, Next.js, React Native, PHP, SQL y NoSQL. Creación de aplicaciones web y móviles escalables con experiencia en tecnologías modernas." />
+  <meta name="keywords"
+    content="desarrollador web, full stack developer, React, Next.js, React Native, PHP, JavaScript, TypeScript, SQL, NoSQL, MongoDB, programador, desarrollador frontend, desarrollador backend" />
+  <meta name="author" content="Pablo Diaz" />
+
+  <link rel="stylesheet" href="/stylesheets/main.css" />
+  <link rel="stylesheet" href="/stylesheets/game.css" />
+
+  <script type="module" defer src="/javascripts/main.js"></script>
+</head>
+
+<body id="GamePage" class="body-container dark">
+  <header class="navbar-header">
+    <a href="/" class="logo-link" title="inicio">
+      <h1>Pablo Diaz</h1>
+      <h2 data-lang="web-developer">Desarrollador Web</h2>
+    </a>
+
+    <a href="/home" title="Inicio">
+      Inicio
+    </a>
+  </header>
+
+  <main class="main-layout">
+    <div class="container">
+      <section class="game-area">
+        <header class="game-header">
+          <h1 class="game-title">Clicker Game</h1>
+        </header>
+
+        <section class="game-card">
+          <div class="game-stats">
+            <section class="stat-box">
+              <div class="stat-label">Clicks</div>
+              <div class="stat-value clicks" id="clickCounter">0</div>
+            </section>
+            <section class="stat-box">
+              <div class="stat-label">Tiempo</div>
+              <div class="stat-value timer" id="timer">5</div>
+            </section>
+          </div>
+
+          <button id="clickButton" class="click-button">
+            Iniciar Juego
+          </button>
+        </section>
+      </section>
+
+      <section class="leaderboard-area">
+        <div class="leaderboard-card">
+          <header class="leaderboard-header">
+            <h2 class="leaderboard-title">Top 10 Jugadores</h2>
+          </header>
+          <table class="leaderboard-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Jugador</th>
+                <th>Clicks</th>
+              </tr>
+            </thead>
+            <tbody id="leaderboardBody">
+              <% if (leaderboard && leaderboard.length> 0) { %>
+                <% leaderboard.forEach((score, index)=> { %>
+                  <% let rankClass='' ; if (index===0) rankClass='gold' ; else if (index===1) rankClass='silver' ; else
+                    if (index===2) rankClass='bronze' ; %>
+                    <tr>
+                      <td class="rank <%= rankClass %>">
+                        <%= index + 1 %>
+                      </td>
+                      <td class="nickname">
+                        <%= score.nickname %>
+                      </td>
+                      <td class="score">
+                        <%= score.clicks %>
+                      </td>
+                    </tr>
+                    <% }); %>
+                      <% } else { %>
+                        <tr>
+                          <td colspan="3" style="text-align: center; color: var(--text-muted); padding: 2rem;">
+                            No hay puntuaciones aún. ¡Sé el primero!
+                          </td>
+                        </tr>
+                        <% } %>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p class="credits-text" data-lang="creditsText">
+      Los vectores y iconos son de
+      <a href="https://github.com/garudatechnologydevelopers/sketch-icons?ref=svgrepo.com" title="GitHub"
+        target="_blank">github/GarudaTechnology</a> y
+      <a href="https://www.svgrepo.com/author/Garuda%20Technology/" target="_blank">svgrepo/GarudaTechnology</a>
+      con la licencia MIT de
+      <a href="https://www.svgrepo.com/" target="_blank">SVG Repo</a>. Y de
+      <a href="https://fonts.google.com/icons" target="_blank">google/icons</a>
+    </p>
+
+    <hr class="divider">
+
+    <div class="footer-bottom">
+      <div class="developer-info">
+        <p class="developer-label" data-lang="developedBy">
+          SITIO DESARROLLADO POR<br>
+        </p>
+        <a href="https://github.com/pfd1795" target="_blank" class="developer-link">pfd1795</a>
+      </div>
+
+      <p class="version-text">Ver. 0.1</p>
+    </div>
+  </footer>
+
+  <template id="modalDialogTemplate">
+    <h2 class="title">¡Juego Terminado!</h2>
+    <p class="score" id="modalScore">0</p>
+    <p>
+      ¡Excelente! Ahora ingresa tu nickname para guardar tu puntuación.
+    </p>
+    <form class="form" id="scoreForm">
+      <input type="text" id="nicknameInput" class="input" placeholder="Tu nickname" maxlength="20" required>
+      <div id="errorMessage" class="error-message"></div>
+      <button type="submit" id="submitScore" class="submit-button">
+        Guardar Puntuación
+      </button>
+    </form>
+  </template>
+
+  <dialog class="modal-dialog">
+    <article class="modal-content">
+      <!-- <button class="btn" title="Cerrar ventana (Esc)">&times;</button> -->
+      <div class="modal-body">
+      </div>
+    </article>
+  </dialog>
+</body>
+
+</html>

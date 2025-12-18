@@ -1,0 +1,279 @@
+/* ===== RESET CSS - Normalización y reset de estilos entre navegadores ===== */
+
+/* ===== Configuración global y modelo de caja =====
+
+- Establece el modelo de caja border-box para todos los elementos.
+- Incluye padding y border dentro del width/height calculado.
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* ===== Elementos raíz y configuración base =====
+
+- Establece el tamaño de fuente base en 16px para cálculo de rem.
+- Previene el ajuste de tamaño de fuente en iOS al cambiar orientación.
+- Suaviza el renderizado de fuentes.
+*/
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===== Elemento body - Configuración base de tipografía y color =====
+
+- Fondo blanco por defecto.
+- Color de texto negro por defecto.
+- Familia de fuentes sans-serif moderna.
+- Tamaño de fuente base (1rem = 16px).
+- Altura de línea base para mejor legibilidad.
+- Elimina el margen por defecto.
+*/
+
+body {
+  background-color: white;
+  color: black;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
+  min-height: 100vh;
+}
+
+@media print {
+  @page {
+    margin: 20mm;
+    size: A4;
+  }
+
+  body {
+    background-color: white !important;
+    color: black !important;
+  }
+}
+
+/* ===== Encabezados - Reset de estilos por defecto =====
+
+- Elimina el peso de fuente bold por defecto.
+- Elimina márgenes superior e inferior.
+- Establece tamaño relativo consistente.
+- Hereda color del elemento padre.
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: inherit;
+  color: inherit;
+}
+
+/* ===== Párrafos y elementos de texto =====
+
+- Elimina márgenes superior e inferior por defecto.
+- Establece margen inferior consistente cuando sea necesario.
+*/
+
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* ===== Enlaces y elementos interactivos =====
+
+- Hereda color del texto del elemento padre.
+- Elimina subrayado por defecto.
+- Suaviza la transición para estados hover/focus.
+*/
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+/*
+- Mejora la visibilidad del foco para accesibilidad.
+- Outline visible para navegación con teclado.
+*/
+
+a:focus-visible {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+}
+
+/* ===== Listas - Reset de estilos por defecto =====
+
+- Elimina viñetas y números por defecto.
+- Elimina márgenes superior e inferior.
+- Elimina padding izquierdo.
+*/
+
+ul,
+ol {
+  list-style: none;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
+/* ===== Elementos multimedia y embebidos =====
+
+- Elimina márgenes por defecto.
+- Hereda color de texto.
+*/
+
+figure,
+figcaption {
+  margin: 0;
+  color: inherit;
+}
+
+/*
+- Display block para eliminar espacio inferior.
+- Máximo ancho del 100% del contenedor.
+- Altura automática para mantener proporción.
+- Objeto-fit cover para mantener relación de aspecto.
+*/
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+img {
+  object-fit: cover;
+}
+
+/* ===== Formularios y elementos interactivos =====
+
+- Hereda tipografía y color.
+- Elimina estilos por defecto del navegador.
+- Ancho completo del contenedor.
+*/
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: none;
+  outline: none;
+  width: 100%;
+}
+
+/*
+- Cursor pointer para indicar interactividad.
+- Elimina estilos por defecto.
+- Suaviza transiciones.
+*/
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  cursor: pointer;
+  background: none;
+  transition: all 0.2s ease;
+}
+
+/*
+- Cursor pointer para labels asociados a inputs.
+*/
+
+label {
+  cursor: pointer;
+}
+
+/* ===== Tablas - Reset y normalización =====
+
+- Elimina espacio entre bordes de celdas.
+- Borde colapsado para diseño consistente.
+*/
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*
+- Elimina peso de fuente bold por defecto.
+- Alineación consistente.
+*/
+
+th {
+  font-weight: normal;
+  text-align: inherit;
+}
+
+/*
+- Bordes visibles para celdas.
+- Padding consistente.
+*/
+
+th,
+td {
+  border: 1px solid black;
+  padding: 0.5rem;
+}
+
+/* ===== Elementos varios y utilidades =====
+
+- Elimina estilos por defecto de quotes.
+*/
+
+blockquote,
+q {
+  quotes: none;
+}
+
+/*
+- Elimina contenido por defecto de quotes.
+*/
+
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
+  content: none;
+}
+
+/*
+- Mejor legibilidad para texto preformateado.
+- Overflow automático para código largo.
+*/
+
+pre,
+code {
+  font-family: monospace;
+  overflow-x: auto;
+  white-space: pre-wrap;
+}
+
+/*
+- Estilos mínimos para elementos hidden.
+*/
+
+[hidden] {
+  display: none !important;
+}

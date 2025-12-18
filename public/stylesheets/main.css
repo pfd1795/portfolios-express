@@ -1,0 +1,126 @@
+/* ===== MAIN - Estilos principales de layout y estructura global ===== */
+
+@import url("./reset.css");
+@import url("./root.css");
+@import url("./components/global-styles.css");
+
+@import url("./components/navbar.css");
+
+@view-transition {
+  navigation: auto;
+}
+
+/* ===== BODY CONTAINER - Contenedor principal de la aplicación ===== */
+
+.body-container {
+  background: var(--click-gradient, linear-gradient(135deg, var(--color-blue-dark) 0%, var(--color-cyan-dark) 70%));
+  display: grid;
+  letter-spacing: .5px;
+  line-height: var(--leading-relaxed);
+  min-height: 100dvh;
+  transition: all var(--transition-slow) var(--ease-in-out);
+  color: var(--color-white);
+}
+
+/* ===== PAGE LAYOUT - Layout principal del contenido ===== */
+
+.main-layout {
+  background-attachment: fixed;
+  /* padding: var(--space-4); */
+
+  @media (min-width: 768px) {}
+
+  @media (min-width: 1200px) {
+    /* width: min(65%, var(--size-7xl)); */
+    /* padding: var(--space-8); */
+  }
+}
+
+/* ===== FOOTER - pie de página ===== */
+
+.footer {
+  background-color: var(--color-black-mute);
+  color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  outline: 4px solid var(--theme-color);
+  padding: var(--space-4);
+
+  .credits-text {
+    color: var(--color-white);
+    font-size: var(--text-sm);
+    line-height: var(--leading-relaxed);
+
+    a {
+      color: var(--theme-color);
+      text-decoration: underline;
+
+      &:hover {
+        color: var(--color-blue-light);
+      }
+    }
+  }
+
+  .footer-bottom {
+    align-items: flex-end;
+    display: flex;
+    gap: var(--space-4);
+    justify-content: space-between;
+    margin-top: var(--space-4);
+  }
+
+  .developer-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+
+  .developer-label {
+    color: var(--color-gray);
+    font-size: var(--text-xs);
+    letter-spacing: 0.5px;
+    line-height: var(--leading-tight);
+    text-transform: uppercase;
+  }
+
+  .developer-link {
+    font-size: var(--text-lg);
+    font-style: italic;
+    font-weight: var(--font-weight-semibold);
+    text-align: center;
+    text-decoration: none;
+    transition: all var(--transition-normal) var(--ease-in-out);
+    white-space: nowrap;
+
+    &:hover {
+      color: var(--theme-color);
+      text-decoration: underline;
+      transform: translateY(-1px);
+    }
+  }
+
+  .version-text {
+    color: var(--color-white);
+    font-size: var(--text-xs);
+    text-align: right;
+  }
+
+  @media (min-width: 768px) {
+    padding: var(--space-8) var(--space-16);
+
+    .credits-text {
+      font-size: var(--text-base);
+      text-align: center;
+    }
+
+    .footer-bottom {
+      align-items: center;
+      margin-top: var(--space-6);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    padding: var(--space-10) var(--space-20);
+  }
+}

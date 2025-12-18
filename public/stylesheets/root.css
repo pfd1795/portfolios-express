@@ -1,0 +1,307 @@
+/* ===== ROOT CSS - Variables CSS globales y sistema de diseño ===== */
+
+/* COLOR SYSTEM - Sistema de colores */
+:root {
+  /* ===== Neutral Colors - Colores neutros y base =====
+
+- Escala de grises para texto, fondos y bordes
+- Nombres semánticos para mejor comprensión
+*/
+  --color-white: #ffffff;
+  --color-white-soft: #f8f9fa;
+  --color-white-mute: #f1f3f4;
+
+  --color-black: #000000;
+  --color-black-soft: #1a1a1a;
+  --color-black-mute: #2d2d2d;
+
+  --color-gray: #999999;
+  --color-gray-soft: #9ca3af;
+  --color-gray-mute: #374151;
+
+  /* ===== Primary Colors - Colores primarios de la marca =====
+
+- Azul como color principal con 3 tonalidades
+- Nomenclatura clara: light, base, dark
+*/
+  --color-blue-light: #3b82f6;
+  --color-blue: #2563eb;
+  --color-blue-dark: #1d4ed8;
+
+  /* ===== Secondary Colors - Colores secundarios =====
+
+- Verde para acciones positivas y éxito
+*/
+  --color-green-light: #10b981;
+  --color-green: #059669;
+  --color-green-dark: #047857;
+
+  /*
+- Rojo para errores y acciones destructivas
+*/
+  --color-red-light: #ef4444;
+  --color-red: #dc2626;
+  --color-red-dark: #b91c1c;
+
+  /*
+- Amarillo para advertencias y alertas
+*/
+  --color-yellow-light: #f59e0b;
+  --color-yellow: #d97706;
+  --color-yellow-dark: #b45309;
+
+  /*
+- Púrpura para elementos destacados
+*/
+  --color-purple-light: #8b5cf6;
+  --color-purple: #7c3aed;
+  --color-purple-dark: #6d28d9;
+
+  /*
+- Rosa para elementos especiales
+*/
+  --color-pink-light: #ec4899;
+  --color-pink: #db2777;
+  --color-pink-dark: #be185d;
+
+  /*
+- Naranja para llamadas a la acción
+*/
+  --color-orange-light: #f97316;
+  --color-orange: #ea580c;
+  --color-orange-dark: #c2410c;
+
+  /*
+- Cian para información y datos
+*/
+  --color-cyan-light: #06b6d4;
+  --color-cyan: #0891b2;
+  --color-cyan-dark: #0e7490;
+
+  /*
+- Índigo para elementos de navegación
+*/
+  --color-indigo-light: #6366f1;
+  --color-indigo: #4f46e5;
+  --color-indigo-dark: #4338ca;
+
+  /*
+- Esmeralda para estados positivos
+*/
+  --color-emerald-light: #10b981;
+  --color-emerald: #059669;
+  --color-emerald-dark: #047857;
+
+  /*
+- Amber para highlights
+*/
+  --color-amber-light: #f59e0b;
+  --color-amber: #d97706;
+  --color-amber-dark: #b45309;
+
+  /* ===== Semantic Colors - Colores semánticos para estados y acciones =====
+
+- Colores semánticos que referencian la paleta base
+- Nombres descriptivos para uso en componentes
+*/
+  --color-success: var(--color-green);
+  --color-success-light: var(--color-green-light);
+  --color-success-dark: var(--color-green-dark);
+
+  --color-warning: var(--color-yellow);
+  --color-warning-light: var(--color-yellow-light);
+  --color-warning-dark: var(--color-yellow-dark);
+
+  --color-error: var(--color-red);
+  --color-error-light: var(--color-red-light);
+  --color-error-dark: var(--color-red-dark);
+
+  --color-info: var(--color-cyan);
+  --color-info-light: var(--color-cyan-light);
+  --color-info-dark: var(--color-cyan-dark);
+
+  --color-primary: var(--color-blue);
+  --color-primary-light: var(--color-blue-light);
+  --color-primary-dark: var(--color-blue-dark);
+
+  /* ===== Theme Colors - Colores del tema actual =====
+
+- Variables de tema que pueden cambiar entre modos claro/oscuro
+- Referencias a la paleta semántica
+*/
+  --theme-color: var(--color-primary);
+  --theme-color-light: var(--color-primary-light);
+  --theme-color-dark: var(--color-primary-dark);
+
+  --bg-primary: var(--color-white);
+  --bg-secondary: var(--color-gray-200);
+  --bg-tertiary: var(--color-gray-100);
+
+  --text-primary: var(--color-gray-900);
+  --text-secondary: var(--color-gray-700);
+  --text-tertiary: var(--color-gray-500);
+
+  --border-color: var(--color-gray-200);
+  --border-color-strong: var(--color-gray-300);
+
+  /* ===== TYPOGRAPHY SYSTEM - Sistema de tipografía escalable =====
+
+- Escala de tipos modular para consistencia visual
+- Unidades rem para escalado responsive
+- Nombres semánticos para tamaños
+*/
+
+  /* Tamaños de fuente base */
+  --text-xs: 0.75rem;
+  /* 12px */
+  --text-sm: 0.875rem;
+  /* 14px */
+  --text-base: 1rem;
+  /* 16px */
+  --text-lg: 1.125rem;
+  /* 18px */
+  --text-xl: 1.25rem;
+  /* 20px */
+  --text-2xl: 1.5rem;
+  /* 24px */
+  --text-3xl: 1.875rem;
+  /* 30px */
+  --text-4xl: 2.25rem;
+  /* 36px */
+  --text-5xl: 3rem;
+  /* 48px */
+  --text-6xl: 3.75rem;
+  /* 60px */
+
+  /* Pesos de fuente */
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Alturas de línea */
+  --leading-tight: 1.25;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.75;
+
+  /* ===== SPACING SYSTEM - Sistema de espaciado consistente =====
+
+- Escala de espaciado basada en 0.25rem (4px)
+- Unidades consistentes para márgenes, paddings y gaps
+*/
+  --space-1: 0.25rem;
+  /* 4px */
+  --space-2: 0.5rem;
+  /* 8px */
+  --space-3: 0.75rem;
+  /* 12px */
+  --space-4: 1rem;
+  /* 16px */
+  --space-5: 1.25rem;
+  /* 20px */
+  --space-6: 1.5rem;
+  /* 24px */
+  --space-8: 2rem;
+  /* 32px */
+  --space-10: 2.5rem;
+  /* 40px */
+  --space-12: 3rem;
+  /* 48px */
+  --space-16: 4rem;
+  /* 64px */
+  --space-20: 5rem;
+  /* 80px */
+  --space-24: 6rem;
+  /* 96px */
+
+  /* ===== LAYOUT & SIZING - Tamaños de contenedores y elementos =====
+
+- Tamaños semánticos para elementos de layout
+- Escala progresiva para diferentes necesidades
+*/
+
+  /* Tamaños de contenedores */
+  --size-xs: 20rem;
+  /* 320px */
+  --size-sm: 24rem;
+  /* 384px */
+  --size-md: 28rem;
+  /* 448px */
+  --size-lg: 32rem;
+  /* 512px */
+  --size-xl: 36rem;
+  /* 576px */
+  --size-2xl: 42rem;
+  /* 672px */
+  --size-3xl: 48rem;
+  /* 768px */
+  --size-4xl: 56rem;
+  /* 896px */
+  --size-5xl: 64rem;
+  /* 1024px */
+  --size-6xl: 72rem;
+  /* 1152px */
+  --size-7xl: 80rem;
+  /* 1280px */
+
+  /* Breakpoints para responsive design */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+
+  /* ===== BORDERS & EFFECTS - Bordes, sombras y efectos =====
+
+- Sistema de bordes consistente
+- Sombras para diferentes elevaciones
+*/
+  --border-radius-sm: 0.125rem;
+  /* 2px */
+  --border-radius: 0.25rem;
+  /* 4px */
+  --border-radius-md: 0.375rem;
+  /* 6px */
+  --border-radius-lg: 0.5rem;
+  /* 8px */
+  --border-radius-xl: 0.75rem;
+  /* 12px */
+  --border-radius-2xl: 1rem;
+  /* 16px */
+  --border-radius-full: 9999px;
+
+  /* Sistema de sombras */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+
+  /* ===== Z-INDEX - Sistema de capas para stacking context =====
+
+- Valores semánticos para z-index
+- Escala consistente para evitar conflicts
+*/
+  --z-index-dropdown: 1000;
+  --z-index-sticky: 1020;
+  --z-index-fixed: 1030;
+  --z-index-modal-backdrop: 1040;
+  --z-index-modal: 1050;
+  --z-index-popover: 1060;
+  --z-index-tooltip: 1070;
+  --z-index-toast: 1080;
+
+  /* ===== ANIMATION & TRANSITIONS - Transiciones y animaciones =====
+
+- Duración estándar para transiciones
+- Curvas de easing para diferentes propósitos
+*/
+  --transition-fast: 150ms;
+  --transition-normal: 250ms;
+  --transition-slow: 350ms;
+
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+}
